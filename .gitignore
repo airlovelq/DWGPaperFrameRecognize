@@ -14,3 +14,5 @@ PaperFrameRecognize/PaperFrameRecognize/x64/Debug
 PyDwgPaperFrameRecognize/.idea
 PyDwgPaperFrameRecognize/__pycache__
 *.pyc
+*.ipch
+*.arx
