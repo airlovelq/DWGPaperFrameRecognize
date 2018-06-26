@@ -1,2 +1,4 @@
 # DWGPaperFrameRecognize
-使用TensorFlow，识别与判断dwg文件中的图框
+实现使用TensorFlow，识别与判断dwg文件中的图框
+PaperFrameRecognize文件夹中为AutoCAD2013环境下的dwg文件分析及图框标定程序，最终导出图框与非图框的图片，作为训练样本。
+PyDwgPaperFrameRecognize文件夹中为python文件，TensorFlow训练网络，样本选择对话框，图片预处理等
