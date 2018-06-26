@@ -1,0 +1,13 @@
+*.user
+*.vspscc
+Debug
+PaperFrameRecognize/ipch
+PaperFrameRecognize/x64
+PaperFrameRecognize/PaperFrameRecognize/x64
+*.tlog
+*.obj
+*.log
+*.lastbuildstate
+*.sdf
+PyDwgPaperFrameRecognize/.idea
+PyDwgPaperFrameRecognize/__pycache__
