@@ -3,7 +3,9 @@
 Debug
 PaperFrameRecognize/ipch
 PaperFrameRecognize/x64
+PaperFrameRecognize/x64/Debug
 PaperFrameRecognize/PaperFrameRecognize/x64
+PaperFrameRecognize/PaperFrameRecognize/x64/Debug
 *.tlog
 *.obj
 *.log
