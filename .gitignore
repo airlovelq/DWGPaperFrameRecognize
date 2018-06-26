@@ -11,3 +11,4 @@ PaperFrameRecognize/PaperFrameRecognize/x64
 *.sdf
 PyDwgPaperFrameRecognize/.idea
 PyDwgPaperFrameRecognize/__pycache__
+*.pyc
