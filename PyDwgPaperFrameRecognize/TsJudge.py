@@ -6,6 +6,11 @@ def judge(picFolder,modelPath,checkpoint):
     datatest, typetest = PT.getPicData(picFolder)
     datatest = np.array(datatest)
     datatest = datatest.astype('float32')/255
+
+    shapetest = np.shape(datatest)
+    shapetestnew = shapetest + (1,)
+    datatest = np.reshape(datatest, shapetestnew)
+
     typetest = np.array(typetest)
 
     ret1 = []
@@ -26,5 +31,4 @@ def judge(picFolder,modelPath,checkpoint):
     return ret1
 
 if __name__ == '__main__':
-    judge('f:/AITest1','f:/tensorsave/model.meta','f:/tensorsave/')
-
+    judge('f:/AITest1','f:/20180627/framenet.meta','f:/20180627/')
