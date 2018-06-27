@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
+#coding=utf-8
 import tensorflow as tf
 import numpy as np
 import PicTreate as PT
 import cv2 as cv
 IMAGE_SIZE = 128
-NUM_CHANNELS = 3
+NUM_CHANNELS = 1
 CONV1_DEEP = 32
 CONV1_SIZE = 3
 CONV2_SIZE = 3
@@ -23,6 +25,7 @@ def train(datatrain, typetrain, datatest, typetest, modelPath):
     keep_prob_5 = tf.placeholder(tf.float32,name='keep_prob')
     keep_prob_75 = tf.placeholder(tf.float32)
 
+    #两次卷积池化
     with tf.variable_scope('conv1'):
         weight1 = tf.get_variable('weight',[CONV1_SIZE,CONV1_SIZE,NUM_CHANNELS,CONV1_DEEP],initializer=tf.truncated_normal_initializer(stddev=0.1))
         bias1 = tf.get_variable('bias',[CONV1_DEEP],initializer=tf.constant_initializer(0.1))
@@ -68,8 +71,8 @@ def train(datatrain, typetrain, datatest, typetest, modelPath):
     result = tf.argmax(fc2, 1, name='result')
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-        for n in range(1):
-            # 每次取50张图片
+        for n in range(100):
+            # 每次取BATCH_SIZE张图片
             for i in range(len(datatrain)//BATCH_SIZE):
                 batch_x = datatrain[i * BATCH_SIZE: (i + 1) * BATCH_SIZE]
                 batch_y = typetrain[i * BATCH_SIZE: (i + 1) * BATCH_SIZE]
@@ -85,3 +88,4 @@ def train(datatrain, typetrain, datatest, typetest, modelPath):
                 #print(singletest)
         saver = tf.train.Saver()
         saver.save(sess, modelPath)#'f:/tensorsave/model')
+
